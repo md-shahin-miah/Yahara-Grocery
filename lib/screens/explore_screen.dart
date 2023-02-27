@@ -62,11 +62,13 @@ class ExploreScreen extends StatelessWidget {
 
   Widget getStaggeredGridView(BuildContext context) {
     return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: 10,
       ),
       child: StaggeredGrid.count(
         crossAxisCount: 2,
+        mainAxisSpacing: 3.0,
+        crossAxisSpacing: 4.0,
         children: categoryItemsDemo.asMap().entries.map<Widget>((e) {
           int index = e.key;
           CategoryItem categoryItem = e.value;
@@ -75,22 +77,20 @@ class ExploreScreen extends StatelessWidget {
               onCategoryItemClicked(context, categoryItem);
             },
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: CategoryItemCardWidget(
                 item: categoryItem,
                 color: gridColors[index % gridColors.length],
               ),
             ),
           );
-        }).toList(),
-        mainAxisSpacing: 3.0,
-        crossAxisSpacing: 4.0, // add some space
+        }).toList(), // add some space
       ),
     );
   }
 
   void onCategoryItemClicked(BuildContext context, CategoryItem categoryItem) {
-    Navigator.of(context).push(new MaterialPageRoute(
+    Navigator.of(context).push(MaterialPageRoute(
       builder: (BuildContext context) {
         return CategoryItemsScreen();
       },

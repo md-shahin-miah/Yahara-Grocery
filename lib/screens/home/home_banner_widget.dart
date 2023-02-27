@@ -12,9 +12,9 @@ class HomeBanner extends StatelessWidget {
       width: MediaQuery.of(context).size.width*0.9,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          image: DecorationImage(
+          image: const DecorationImage(
               image: AssetImage(
-                "assets/images/banner_background.png",
+                "assets/images/back.jpg",
 
               ),
               fit: BoxFit.cover)),
@@ -32,7 +32,7 @@ class HomeBanner extends StatelessWidget {
           Spacer(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               AppText(
                 text: "Fresh Vegetables",
                 fontSize: 22,

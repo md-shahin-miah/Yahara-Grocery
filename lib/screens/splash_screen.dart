@@ -17,12 +17,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    const delay = const Duration(seconds: 3);
+    const delay = const Duration(seconds: 5);
     Future.delayed(delay, () => onTimerFinished());
   }
 
   void onTimerFinished() {
-    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+    Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (BuildContext context) {
         return WelcomeScreen();
       },
@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryColor,
+      backgroundColor: Colors.teal,
       body: Center(
         child: splashScreenIcon(),
       ),

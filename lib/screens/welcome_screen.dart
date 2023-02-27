@@ -8,39 +8,43 @@ import '../styles/colors.dart';
 import 'dashboard/dashboard_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  final String imagePath = "assets/images/frr.jpg";
+  final String imagePath = "assets/images/spl.png";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.primaryColor,
+        backgroundColor: Colors.teal[200],
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
             image: DecorationImage(
+              alignment: Alignment.center,
               image: AssetImage(imagePath),
-              fit: BoxFit.fill,
+              fit: BoxFit.fitWidth,
             ),
           ),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Spacer(),
-                icon(),
-                SizedBox(
-                  height: 20,
+
+                const SizedBox(
+                  height: 30,
                 ),
                 welcomeTextWidget(),
-                SizedBox(
+                const SizedBox(
+                  height: 20,
+                ),
+                const SizedBox(
                   height: 10,
                 ),
+                const Spacer(),
                 sloganText(),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 getButton(context),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 )
               ],
@@ -60,7 +64,7 @@ class WelcomeScreen extends StatelessWidget {
 
   Widget welcomeTextWidget() {
     return Column(
-      children: [
+      children: const [
         AppText(
           text: "Welcome",
           fontSize: 48,
@@ -79,10 +83,10 @@ class WelcomeScreen extends StatelessWidget {
 
   Widget sloganText() {
     return AppText(
-      text: "Get your grecories as fast as in hour",
+      text: "Get your groceries as fast as in hour",
       fontSize: 16,
       fontWeight: FontWeight.w600,
-      color: Color(0xffFCFCFC).withOpacity(0.7),
+      color: const Color(0xffFCFCFC).withOpacity(0.7),
     );
   }
 
@@ -90,7 +94,7 @@ class WelcomeScreen extends StatelessWidget {
     return AppButton(
       label: "Get Started",
       fontWeight: FontWeight.w600,
-      padding: EdgeInsets.symmetric(vertical: 25),
+      padding: const EdgeInsets.symmetric(vertical: 25),
       onPressed: () {
         onGetStartedClicked(context);
       },
@@ -98,7 +102,7 @@ class WelcomeScreen extends StatelessWidget {
   }
 
   void onGetStartedClicked(BuildContext context) {
-    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+    Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (BuildContext context) {
         return DashboardScreen();
       },

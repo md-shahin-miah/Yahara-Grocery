@@ -5,7 +5,7 @@ import '../models/category_item.dart';
 
 
 class CategoryItemCardWidget extends StatelessWidget {
-  CategoryItemCardWidget(
+  const CategoryItemCardWidget(
       {Key? key, required this.item, this.color = Colors.blue})
       : super(key: key);
   final CategoryItem item;
@@ -14,26 +14,26 @@ class CategoryItemCardWidget extends StatelessWidget {
 
   final width = 175.0;
 
-  final Color borderColor = Color(0xffE2E2E2);
-  final double borderRadius = 18;
+  final Color borderColor = const Color(0xffE2E2E2);
+  final double borderRadius = 12;
   final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 5, bottom: 5),
+      padding: const EdgeInsets.only(top: 5, bottom: 5),
       decoration: BoxDecoration(
         color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(18),
         border: Border.all(
           color: color.withOpacity(0.7),
-          width: 2,
+          width: 1,
         ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             height: 120,
             width: 120,
             child: imageWidget(),

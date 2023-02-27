@@ -22,70 +22,48 @@ class HomeScreen extends StatelessWidget {
             child: Center(
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   // SvgPicture.asset("assets/icons/app_icon_color.svg"),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   padded(locationWidget()),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   padded(SearchBarWidget()),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   padded(HomeBanner()),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   padded(subTitle("Most Exclusive Order")),
                   getHorizontalItemSlider(exclusiveOffers),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   padded(subTitle("Best Selling")),
                   getHorizontalItemSlider(bestSelling),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   padded(subTitle("Groceries")),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  Container(
-                    height: 105,
-                    child: ListView(
-                      padding: EdgeInsets.zero,
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        GroceryFeaturedCard(
-                          groceryFeaturedItems[0],
-                          color: Color(0xffF8A44C),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        GroceryFeaturedCard(
-                          groceryFeaturedItems[1],
-                          color: AppColors.primaryColor,
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                      ],
-                    ),
-                  ),
                   SizedBox(
+                    height: 105,
+                    child: getHorizontalGroceryFeaturedSlider(groceryFeaturedItems),
+                  ),
+                  const SizedBox(
                     height: 15,
                   ),
                   getHorizontalItemSlider(groceries),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                 ],
@@ -106,10 +84,10 @@ class HomeScreen extends StatelessWidget {
 
   Widget getHorizontalItemSlider(List<GroceryItem> items) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       height: 250,
       child: ListView.separated(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         itemCount: items.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
@@ -124,7 +102,34 @@ class HomeScreen extends StatelessWidget {
           );
         },
         separatorBuilder: (BuildContext context, int index) {
-          return SizedBox(
+          return const SizedBox(
+            width: 20,
+          );
+        },
+      ),
+    );
+  }
+  Widget getHorizontalGroceryFeaturedSlider(List<GroceryFeaturedItem> items) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      height: 100,
+      child: ListView.separated(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        itemCount: items.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            // onTap: () {
+            //   onItemClicked(context, items[index]);
+            // },
+            child:GroceryFeaturedCard(
+              items[index],
+              color: index%2==0? const Color(0xffee85c9):const Color(0xffF8A44C),
+            ),
+          );
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return const SizedBox(
             width: 20,
           );
         },
@@ -151,7 +156,7 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         Spacer(),
-        Text(
+        const Text(
           "See All",
           style: TextStyle(
               fontSize: 18,
@@ -172,10 +177,10 @@ class HomeScreen extends StatelessWidget {
           height: 20,
           width: 10,
         ),
-        SizedBox(
+        const SizedBox(
           width: 8,
         ),
-        Text(
+        const Text(
           "Sylhet,Bangladesh",
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         )

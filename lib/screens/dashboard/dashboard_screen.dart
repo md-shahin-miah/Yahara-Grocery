@@ -19,7 +19,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       body: navigatorItems[currentIndex].screen,
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topRight: Radius.circular(15),
             topLeft: Radius.circular(15),
           ),
@@ -32,7 +32,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ],
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(15),
             topRight: Radius.circular(15),
           ),
@@ -46,7 +46,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             },
             type: BottomNavigationBarType.fixed,
             selectedItemColor: AppColors.primaryColor,
-            selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+            selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
             unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
             unselectedItemColor: Colors.black,
             items: navigatorItems.map((e) {

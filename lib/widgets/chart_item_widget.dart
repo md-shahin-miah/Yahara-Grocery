@@ -28,8 +28,8 @@ class _ChartItemWidgetState extends State<ChartItemWidget> {
     return Container(
       height: height,
       width: MediaQuery.of(context).size.width*0.9,
-      margin: EdgeInsets.symmetric(
-        vertical: 30,
+      margin: const EdgeInsets.symmetric(
+        vertical: 10,
       ),
       child: IntrinsicHeight(
         child: Row(
@@ -68,7 +68,7 @@ class _ChartItemWidgetState extends State<ChartItemWidget> {
             ),
             Column(
               children: [
-                Icon(
+                const Icon(
                   Icons.close,
                   color: AppColors.darkGrey,
                   size: 25,

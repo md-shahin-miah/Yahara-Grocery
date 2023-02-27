@@ -10,7 +10,7 @@ class SearchBarWidget extends StatelessWidget {
       padding: EdgeInsets.all(16),
       width: double.maxFinite,
       decoration: BoxDecoration(
-        color: Color(0xFFF2F3F2),
+        color: const Color(0xFFF2F3F2),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -22,8 +22,8 @@ class SearchBarWidget extends StatelessWidget {
           SizedBox(
             width: 8,
           ),
-          Text(
-            "Search Shop",
+          const Text(
+            "Search products",
             style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,

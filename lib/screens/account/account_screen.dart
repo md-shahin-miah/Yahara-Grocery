@@ -13,47 +13,45 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            ListTile(
+              leading:
+                  SizedBox(width: 65, height: 65, child: getImageHeader()),
+              title: const AppText(
+                text: "Mohammed Shahin",
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
-              ListTile(
-                leading:
-                    SizedBox(width: 65, height: 65, child: getImageHeader()),
-                title: AppText(
-                  text: "Mohammed Shahin",
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-                subtitle: AppText(
-                  text: "https://github.com/ShahinMohammad-insaneCoder",
-                  color: Color(0xff7C7C7C),
-                  fontWeight: FontWeight.normal,
-                  fontSize: 16,
-                ),
+              subtitle: const AppText(
+                text: "https://github.com/ShahinMohammad-insaneCoder",
+                color: Color(0xff7C7C7C),
+                fontWeight: FontWeight.normal,
+                fontSize: 16,
               ),
-              Column(
-                children: getChildrenWithSeperator(
-                  widgets: accountItems.map((e) {
-                    return getAccountItemWidget(e);
-                  }).toList(),
-                  seperator: Divider(
-                    thickness: 1,
-                  ),
+            ),
+            Column(
+              children: getChildrenWithSeperator(
+                widgets: accountItems.map((e) {
+                  return getAccountItemWidget(e);
+                }).toList(),
+                seperator: const Divider(
+                  thickness: 1,
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              logoutButton(),
-              SizedBox(
-                height: 20,
-              )
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            logoutButton(),
+            const SizedBox(
+              height: 10,
+            )
+          ],
         ),
       ),
     );
@@ -114,7 +112,7 @@ class AccountScreen extends StatelessWidget {
 
   Widget getAccountItemWidget(AccountItem accountItem) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 15),
+      margin: const EdgeInsets.symmetric(vertical: 15),
       padding: EdgeInsets.symmetric(horizontal: 25),
       child: Row(
         children: [
